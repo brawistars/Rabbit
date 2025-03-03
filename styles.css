@@ -1,0 +1,90 @@
+/* Основные стили для всего сайта */
+body {
+  background-image: url('img/3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Контейнер для таблицы */
+.table-container {
+  width: 90%; /* Для адаптации на телефонах */
+  max-width: 1200px; /* Максимальная ширина для больших экранов */
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 100px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-x: auto; /* Горизонтальная прокрутка для небольших экранов */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  th, td {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .table-container {
+    margin: 50px auto;
+    padding: 8px;
+  }
+}
+
+/* Анимация для плавающих элементов */
+.animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.floating-item {
+  position: absolute;
+  font-size: 25px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
